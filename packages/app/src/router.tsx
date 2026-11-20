@@ -19,12 +19,8 @@ const router = createBrowserRouter([
       { path: 'profile', element: <Profile /> }
     ]
   }
-], {
-  future: {
-    v7_startTransition: true,
-    v7_relativeSplatPath: true
-  }
-})
+])
+
 export const AppRouter: React.FC = () => {
   return <RouterProvider router={router} />
 }
