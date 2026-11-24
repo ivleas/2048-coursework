@@ -1,5 +1,6 @@
-import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
+import React from 'react'
+
 import { Button } from './Button'
 
 describe('Button', () => {
@@ -10,6 +11,7 @@ describe('Button', () => {
 
   it('calls onClick when clicked', () => {
     const handleClick = jest.fn()
+
     render(<Button label="click" onClick={handleClick} />)
     fireEvent.click(screen.getByTestId('button'))
     expect(handleClick).toHaveBeenCalledTimes(1)
