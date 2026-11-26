@@ -6,9 +6,7 @@
 
 ### 1. Основное приложение (`packages/app`)
 
-
 **Назначение:** клиентское веб-приложение игры 2048 с сохранением прогресса.
-
 
 **Структура папок:**
 ```text
@@ -18,18 +16,20 @@ packages/app/
 │   │   └── Layout.tsx
 │   ├── pages/
 │   │   ├── Home.tsx
+│   │   ├── Home.test.tsx
 │   │   ├── Game.tsx
 │   │   ├── History.tsx
 │   │   ├── Settings.tsx
 │   │   └── Profile.tsx
 │   ├── router.tsx
 │   ├── App.tsx
-│   └── main.tsx
+│   ├── main.tsx
+│   └── setupTests.ts
 ├── index.html
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
-├── eslint.config.cjs
+├── eslint.config.js
 └── jest.config.js
 ```
 
@@ -63,8 +63,8 @@ packages/ui-library/
 │   └── index.ts
 ├── package.json
 ├── tsconfig.json
-├── jest.config.js
-└── .eslintrc.cjs
+├── jest.config.cjs
+└── eslint.config.js
 ```
 
 **Список компонентов:**
@@ -74,15 +74,21 @@ packages/ui-library/
 
 | Библиотека | Версия | Назначение |
 |------------|--------|------------|
-| react | ^19.0.0 | UI-фреймворк |
-| react-dom | ^19.0.0 | рендеринг в DOM |
-| react-router-dom | ^6.20.0 | клиентский роутинг |
-| typescript | ^5.3.0 | статическая типизация |
-| vite | ^6.0.0 | сборщик приложения |
-| jest | ^30.0.0 | тестирование |
-| eslint | ^9.0.0 | линтинг кода (Flat Config) |
-| @typescript-eslint/eslint-plugin | ^8.0.0 | правила TypeScript для ESLint |
-| @testing-library/react | ^16.0.0 | тестирование React-компонентов |
+| react | ^19.3.0 | UI-фреймворк |
+| react-dom | ^19.3.0 | рендеринг в DOM |
+| react-router-dom | ^7.18.5 | клиентский роутинг |
+| typescript | ~5.9.3 | статическая типизация |
+| vite | ^7.1.11 | сборщик приложения |
+| @vitejs/plugin-react | ^5.0.4 | поддержка React в Vite |
+| jest | ^30.2.0 | тестирование |
+| jest-environment-jsdom | ^30.2.0 | среда Jest для браузера |
+| eslint | ^9.36.0 | линтинг кода (Flat Config) |
+| typescript-eslint | ^8.45.0 | правила TypeScript для ESLint |
+| eslint-plugin-react | ^7.37.5 | правила React для ESLint |
+| eslint-plugin-react-hooks | ^7.1.1 | правила хуков React |
+| eslint-plugin-import | ^2.32.0 | контроль порядка импортов |
+| @testing-library/react | ^16.3.0 | тестирование React-компонентов |
+| @testing-library/jest-dom | ~6.9.1 | дополнительные матчеры для Jest |
 
 ## Использование библиотеки компонентов
 

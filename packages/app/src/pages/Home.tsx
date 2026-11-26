@@ -1,5 +1,6 @@
-import { Button } from '@my-app/ui-library'
 import React from 'react'
+
+import { Button } from '@my-app/ui-library'
 import { useNavigate } from 'react-router-dom'
 
 export const Home: React.FC = () => {
