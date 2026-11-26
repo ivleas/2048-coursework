@@ -1,6 +1,7 @@
 import js from '@eslint/js'
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import importPlugin from 'eslint-plugin-import'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
@@ -24,11 +25,41 @@ export default defineConfig([
     plugins: {
       '@typescript-eslint': typescriptEslint,
       'react': react,
+      'import': importPlugin
     },
   }, {
+    files: ['**/*.{js,jsx,ts,tsx}'],
     rules: {
       "indent": ["error", 2],
       'semi': ['error', 'never'],
+      'import/order': ['error', {
+        'groups': [
+          'builtin',
+          'external',
+          'internal',
+          ['parent', 'sibling'],
+          'index',
+          'object',
+          'type'
+        ],
+        'pathGroups': [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before'
+          },
+          {
+            pattern: '@/**',
+            group: 'internal'
+          }
+        ],
+        'pathGroupsExcludedImportTypes': ['react'],
+        'newlines-between': 'always',
+        'alphabetize': {
+          order: 'asc',
+          caseInsensitive: true
+        }
+      }],
       'no-multiple-empty-lines': ['error', {
         max: 1,
         maxEOF: 0,

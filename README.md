@@ -35,8 +35,11 @@ npm run build
 
 ```bash
 npm run test
+npm run test:coverage
 npm run lint
+npm run lint:fix
 ```
+Покрытие тестами библиотеки общих компонентов (`Button`) составляет 100% по всем столбцам.
 
 ## Скриншоты работы приложения
 
